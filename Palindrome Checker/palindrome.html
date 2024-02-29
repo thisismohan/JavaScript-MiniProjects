@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Palindrome Checker</h1>
+        <div class="form">
+            <input id='inp' type="text" placeholder="Enter word">
+            <button id="btn">Check</button>
+        </div>
+
+
+        <div id="res">
+        </div>
+    </div>
+    <script>
+        // function convert() {
+        //     let a = document.getElementById('para').value
+        //     let b = a.split(' ');
+        //     let length = b.length;
+        //     let result = document.getElementById('res')
+        //     result.innerHTML = length;
+        // }
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', checker)
+        function checker() {
+            let a = document.getElementById('inp').value;
+            let str = a.replace(/\s+/g, '').toUpperCase()
+            let rev = str.split('').reverse().join('')
+            let res = '';
+            if (str === rev) {
+                res = 'palindrome';
+            }
+            else {
+                res = 'not palindrome';
+            }
+            let op = document.getElementById('res')
+            op.innerHTML = res.toUpperCase();
+        }
+
+    </script>
+</body>
+
+</html>
